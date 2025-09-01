@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans:wght@400;700&display=swap');
 
 :root {
-  --primary-font: 'Noto-Sans';
+  --primary-font: 'Noto Sans';
   --secondary-font: 'Merriweather';
 }
 
@@ -14,12 +14,32 @@ h1, h2 {
     color: #F1C40F;
     padding-top: 2rem;
 }
-
+/* Main quiz box area styling */
 #quiz-box-area {
-    background-color:#FFFFFF19;
+    background-color:rgba(255, 255, 255, 0.1);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
+
+#quiz-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+#quiz-buttons button {
+ background-color: #2C3E50;
+ color: #ECF0F1;
+ font-family: var(--primary-font);
+ font-weight: bold;
+ flex: 1;
+ padding: 1rem;
+ border: none;
+ border-radius: 20px;
+}
+
