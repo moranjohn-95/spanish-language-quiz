@@ -12,7 +12,12 @@ body {
 h1, h2 {
     font-family: var(--secondary-font);
     color: #F1C40F;
-    padding-top: 2rem;
+    padding-top: 0.5rem;
+}
+
+h3 {
+    font-family: var(--secondary-font);
+    color: #F1C40F;
 }
 /* Main quiz box area styling */
 #quiz-box-area {
@@ -20,6 +25,7 @@ h1, h2 {
     border-radius:20px;
     max-width: 800px;
     margin: auto;
+    margin-top: 10rem;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
@@ -28,18 +34,27 @@ h1, h2 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     gap: 1rem;
 }
 
-#quiz-buttons button {
+#action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+ button {
  background-color: #2C3E50;
  color: #ECF0F1;
  font-family: var(--primary-font);
  font-weight: bold;
- flex: 1;
  padding: 1rem;
  border: none;
  border-radius: 20px;
+ width: 200px;
 }
-
