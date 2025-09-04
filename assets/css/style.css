@@ -30,15 +30,6 @@ h3 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
 
-#quiz-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-
 #action-buttons {
     display: flex;
     flex-direction: column;
