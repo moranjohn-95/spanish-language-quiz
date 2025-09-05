@@ -113,3 +113,9 @@ h3 {
  width: 200px;
 }
 
+#questions-answers-area button {
+display: block;
+margin: 10px auto; 
+text-align: center;   
+}
+
