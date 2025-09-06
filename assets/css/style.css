@@ -129,6 +129,20 @@ margin: 10px auto;
 text-align: center;   
 }
 
+#instruction-box-area ul  {
+    list-style-position: inside;
+    padding-left: 0;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#instruction-box-area li  {
+  font-size: 1.5rem;
+  text-align: left;
+}
+
 /*Make leaderboard layout more realstic*/
 #leaderboard-area ol {
     list-style-position: inside;
