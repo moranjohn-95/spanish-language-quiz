@@ -14,4 +14,9 @@ const showInstructionsButton = document.getElementById("show-instructions");
 const backToQuizButton = document.getElementById("back-to-quiz");
 const StartQuizButton = document.getElementById("start-quiz");
 
+//Username Input 
+const submitUsernameButton = document.getElementById("submit-username")
+const usernameInput = document.getElementById("username-input")
+
+
 
