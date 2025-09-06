@@ -9,4 +9,8 @@ const quizCountdownArea = document.getElementById("quiz-countdown-area");
 const questionsAnswersArea = document.getElementById("questions-answers-area");
 const homeQuizBox = document.getElementById("home-quiz-box-area");
 
+const showInstructionsButton = document.getElementById("show-instructions");
+const backToQuizButton = document.getElementById("back-to-quiz");
+const StartQuizButton = document.getElementById("start-quiz");
+
 
