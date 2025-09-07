@@ -31,3 +31,11 @@ const answersContainer = document.getElementById("answers");
 // Leaderboard
 const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
+
+//Initial Quiz Variables 
+let username = "";
+let selectedCategory = "";
+let score = 0;
+let questionCount = 0;
+let quizzTimer;
+let timeLeft = 100;
