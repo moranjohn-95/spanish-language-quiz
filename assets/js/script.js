@@ -7,7 +7,7 @@ const usernameInputArea = document.getElementById("username-input-area");
 const categoryOptionsArea = document.getElementById("category-options-area");
 const quizCountdownArea = document.getElementById("quiz-countdown-area");
 const questionsAnswersArea = document.getElementById("questions-answers-area");
-const homeQuizBox = document.getElementById("home-quiz-box-area");
+const leaderboardArea = document.getElementById("leaderboard-area");
 
 // Action Buttons
 const showInstructionsButton = document.getElementById("show-instructions");
@@ -18,9 +18,12 @@ const StartQuizButton = document.getElementById("start-quiz");
 const submitUsernameButton = document.getElementById("submit-username")
 const usernameInput = document.getElementById("username-input")
 
-//Timer
+// Timer
 const countdownTimer = document.getElementById("countdown-timer");
 const timerDisplay = document.getElementById("timer");
 
-
+// Questions & Scoring System
+const scoreDisplay = document.getElementById("scoring");
+const questionText = document.getElementById("question-text");
+const answersContainer = document.getElementById("answrs");
 
