@@ -29,5 +29,5 @@ const answersContainer = document.getElementById("answers");
 
 
 // Leaderboard
-const leaderboardList = document.getElementById("leaderboard-list")
-const homeButton = document.getElementById("home-button")
+const leaderboardList = document.getElementById("leaderboard-list");
+const homeButton = document.getElementById("home-button");
