@@ -32,7 +32,7 @@ const answersContainer = document.getElementById("answers");
 const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
 
-//Initial Quiz Variables 
+//Initial Quiz Variables
 let username = "";
 let selectedCategory = "";
 let score = 0;
