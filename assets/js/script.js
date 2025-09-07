@@ -25,5 +25,9 @@ const timerDisplay = document.getElementById("timer");
 // Questions & Scoring System
 const scoreDisplay = document.getElementById("scoring");
 const questionText = document.getElementById("question-text");
-const answersContainer = document.getElementById("answrs");
+const answersContainer = document.getElementById("answers");
 
+
+// Leaderboard
+const leaderboardList = document.getElementById("leaderboard-list")
+const homeButton = document.getElementById("home-button")
