@@ -19,5 +19,8 @@ const submitUsernameButton = document.getElementById("submit-username")
 const usernameInput = document.getElementById("username-input")
 
 //Timer
-const countdownTimer = document.getElementById("countdown-timer")
+const countdownTimer = document.getElementById("countdown-timer");
+const timerDisplay = document.getElementById("timer");
+
+
 
