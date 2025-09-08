@@ -52,3 +52,10 @@ function initializeScreens() {
 }
 
 initializeScreens ();
+
+//Shows instructions when button is clicked
+showInstructionsButton.addEventListener("click", () => {
+    homeQuizBoxArea.style.display =  "none";
+    instructionBoxArea.style.display = "block";
+});
+
