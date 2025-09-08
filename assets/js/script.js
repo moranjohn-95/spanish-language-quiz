@@ -42,7 +42,7 @@ let timeLeft = 100;
 
 //Hide all screens to start except for home screen.
 function initializeScreens() {
-    homeQuizBoxArea.style.display = 'flex';
+    homeQuizBoxArea.style.display = 'block';
     instructionBoxArea.style.display = 'none';
     usernameInputArea.style.display = 'none';
     categoryOptionsArea.style.display = 'none';
