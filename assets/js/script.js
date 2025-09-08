@@ -59,3 +59,10 @@ showInstructionsButton.addEventListener("click", () => {
     instructionBoxArea.style.display = "block";
 });
 
+//Brings user back to Quiz after reading instructions
+backToQuizButton.addEventListener("click", () => {
+    instructionBoxArea.style.display = "none";
+    homeQuizBoxArea.style.display = 'block';
+});
+
+
