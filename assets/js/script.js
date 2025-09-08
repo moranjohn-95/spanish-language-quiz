@@ -39,3 +39,16 @@ let score = 0;
 let questionCount = 0;
 let quizzTimer;
 let timeLeft = 100;
+
+//Hide all screens to start except for home screen.
+function initializeScreens() {
+    homeQuizBoxArea.style.display = 'flex';
+    instructionBoxArea.style.display = 'none';
+    usernameInputArea.style.display = 'none';
+    categoryOptionsArea.style.display = 'none';
+    quizCountdownArea.style.display = 'none';
+    questionsAnswersArea.style.display = 'none';
+    leaderboardArea.style.display = 'none';
+}
+
+initializeScreens ();
