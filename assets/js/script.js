@@ -12,7 +12,7 @@ const leaderboardArea = document.getElementById("leaderboard-area");
 // Action Buttons
 const showInstructionsButton = document.getElementById("show-instructions");
 const backToQuizButton = document.getElementById("back-to-quiz");
-const StartQuizButton = document.getElementById("start-quiz");
+const startQuizButton = document.getElementById("start-quiz");
 
 // Username Input 
 const submitUsernameButton = document.getElementById("submit-username")
@@ -65,4 +65,8 @@ backToQuizButton.addEventListener("click", () => {
     homeQuizBoxArea.style.display = 'block';
 });
 
-
+//Shows input area for user to enter username
+startQuizButton.addEventListener("click", () => {
+    homeQuizBoxArea.style.display = "none";
+    usernameInputArea.style.display = "block";
+});
