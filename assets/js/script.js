@@ -88,4 +88,26 @@ submitUsernameButton.addEventListener("click", () => {
 
 });
 
+//Category Selection & Loading Countdown
+document.querySelectorAll(".category-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        selectedCategory = btn.dataset.category;
+        startCountdown();
+    });
+});
 
+function startCountdown() {
+    categoryOptionsArea.style.display = "none";
+    quizCountdownArea.style.display = "block";
+
+let count = 5;
+countdownTimer.textContent = count;
+const interval = setInterval(() => {
+    count--;
+    countdownTimer.textContent = count;
+    if (count <= 0) {
+        clearInterval(interval);
+        startQuiz();
+    }
+    }, 1000);
+}
