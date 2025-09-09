@@ -111,3 +111,20 @@ const interval = setInterval(() => {
     }
     }, 1000);
 }
+
+//Start of Quiz
+function startQuiz() {
+    score =0;
+    questionCount = 0;
+    timeleft = 100;
+
+quizCountdownArea.style.display = "none";
+questionsAnswersArea.style.dispaly = "block";
+
+startTimer();
+loadQuestion();
+}
+
+
+
+    
