@@ -70,3 +70,22 @@ startQuizButton.addEventListener("click", () => {
     homeQuizBoxArea.style.display = "none";
     usernameInputArea.style.display = "block";
 });
+
+
+//Store username 
+submitUsernameButton.addEventListener("click", () => {
+    const enteredUsername = usernameInput.value.trim();
+    if (!enteredUsername) {
+        alert("Please enter a username!");
+        return;
+    }
+
+    username = enteredUsername;
+    usernameInput.value = "";
+
+    usernameInputArea.style.display = "none";
+   categoryOptionsArea.style.display = "block";
+
+});
+
+
