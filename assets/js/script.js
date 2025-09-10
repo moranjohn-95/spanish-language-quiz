@@ -40,6 +40,116 @@ let questionCount = 0;
 let quizzTimer;
 let timeLeft = 100;
 
+// Questions section 
+
+// Vocab section
+const questions = {
+    vocab: [
+        {
+            question: "La Ventana",
+            answers: [
+                { text: "The Door", correct: false },
+                { text: "The Table", correct: false },
+                { text: "The Window", correct: true },
+                { text: "The Ceiling", correct: false },
+                
+            ]
+        },
+        {
+            question: "El Vecino",
+            answers: [
+                { text: "The Boss", correct: false },
+                { text: "The Neighbour", correct: true },
+                { text: "The Teacher", correct: false },
+                { text: "The Chef", correct: false },
+                
+            ]
+        },
+        {
+            question: "La Prima",
+            answers: [
+                { text: "The Cousin", correct: true },
+                { text: "The Uncle", correct: false },
+                { text: "The Godfather", correct: false },
+                { text: "The Niece", correct: false },
+                
+            ]
+        },
+        {
+            question: "El peluquero",
+            answers: [
+                { text: "The Butcher", correct: false },
+                { text: "The Hairdresser", correct: true },
+                { text: "The Doctor", correct: false },
+                { text: "The Vet", correct: false },
+                
+            ]
+        },
+         {
+            question: "El Clima",
+            answers: [
+                { text: "The Rain", correct: false },
+                { text: "The Thunder", correct: false },
+                { text: "The Wind", correct: false },
+                { text: "The Weather", correct: true },
+                
+            ]
+        },
+        {
+            question: "el Plato",
+            answers: [
+                { text: "The Plate", correct: true },
+                { text: "The Patio", correct: false },
+                { text: "The Place", correct: false },
+                { text: "The Parrot", correct: false },
+                
+            ]
+        },
+        {
+            question: "La Camarera",
+            answers: [
+                { text: "The Waitress", correct: true },
+                { text: "The Nurse", correct: false },
+                { text: "The Receptionist", correct: false },
+                { text: "The Waiter", correct: false },
+                
+            ]
+        },
+        {
+            question: "El Papel",
+            answers: [
+                { text: "The Phone", correct: false },
+                { text: "The Televesion", correct: false },
+                { text: "The Chair", correct: false },
+                { text: "The Paper", correct: true },
+                
+            ]
+        },
+        {
+            question: "las Escaleras",
+            answers: [
+                { text: "The Building", correct: false },
+                { text: "The Room", correct: false },
+                { text: "The Stairs", correct: true },
+                { text: "The Lift", correct: false },
+                
+            ]
+        },
+        {
+            question: "El Tranvía",
+            answers: [
+                { text: "The Train", correct: false },
+                { text: "The Tripod", correct: false },
+                { text: "The Telephone", correct: false },
+                { text: "The Tram", correct: true },
+                
+            ]
+        },
+        
+    ]
+
+}
+
 //Hide all screens to start except for home screen.
 function initializeScreens() {
     homeQuizBoxArea.style.display = 'block';
@@ -89,7 +199,7 @@ submitUsernameButton.addEventListener("click", () => {
 });
 
 //Category Selection & Loading Countdown
-document.querySelectorAll(".category-btn").forEach(btn => {
+document.querySelectorAll(".category-button").forEach(btn => {
     btn.addEventListener("click", () => {
         selectedCategory = btn.dataset.category;
         startCountdown();
@@ -112,19 +222,31 @@ const interval = setInterval(() => {
     }, 1000);
 }
 
-//Start of Quiz
+//Start Qui and 100s Timer
 function startQuiz() {
     score =0;
     questionCount = 0;
-    timeleft = 100;
+    timeLeft = 100;
 
 quizCountdownArea.style.display = "none";
-questionsAnswersArea.style.dispaly = "block";
+questionsAnswersArea.style.display = "block";
 
 startTimer();
 loadQuestion();
 }
 
+function startTimer() {
+    timerDisplay.textContent = timeLeft;
 
+    quizzTimer = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(quizzTimer);
+            endQuiz();
+        }
+    }, 1000);
+}
 
     
