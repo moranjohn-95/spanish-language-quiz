@@ -144,10 +144,113 @@ const questions = {
                 { text: "The Tram", correct: true },
                 
             ]
-        },
+        }
         
-    ]
+    ],
 
+    verbs: [
+        {
+            question: "Empezar", 
+            answers: [
+                { text: "To Hold", correct: false},
+                { text: "To Carry", correct: false},
+                { text: "To Start", correct: true},
+                { text: "To Want", correct: false},
+
+            ]
+        },
+        {
+            question: "Necesitar", 
+            answers: [
+                {text: "To Have", correct: false},
+                {text: "To Need", correct: true},
+                {text: "To Care", correct: false},
+                {text: "To Clean", correct: false},
+
+            ]
+        },
+        {
+            question: "Lavar", 
+            answers: [
+                {text: "To Wash", correct: true},
+                {text: "To Carry", correct: false},
+                {text: "To Start", correct: false},
+                {text: "To Want", correct: false},
+
+            ]
+        },
+        {
+            question: "Tener", 
+            answers: [
+                {text: "To Clean", correct: false},
+                {text: "To Love", correct: false},
+                {text: "To Dissapoint", correct: false},
+                {text: "To Have", correct: true},
+
+            ]
+        },
+        {
+            question: "Medir", 
+            answers: [
+                {text: "To Draw", correct: false},
+                {text: "To Measure", correct: true},
+                {text: "To Finish", correct: false},
+                {text: "To Drink", correct: false},
+
+            ]
+        },
+        {
+            question: "Hablar", 
+            answers: [
+                {text: "To Talk", correct: true},
+                {text: "To Cry", correct: false},
+                {text: "To Sound", correct: false},
+                {text: "To Walk", correct: false},
+
+            ]
+        },
+        {
+            question: "Correr", 
+            answers: [
+                {text: "To Stretch", correct: false},
+                {text: "To Measure", correct: false},
+                {text: "To Go Out", correct: false},
+                {text: "To Run", correct: true},
+
+            ]
+        },
+        {
+            question: "Omitir", 
+            answers: [
+                {text: "To Skip", correct: true},
+                {text: "To Swim", correct: false},
+                {text: "To Own", correct: false},
+                {text: "To Claim", correct: false},
+
+            ]
+        },
+        {
+            question: "Espirar", 
+            answers: [
+                {text: "To Sing", correct: false},
+                {text: "To Make", correct: false},
+                {text: "To Breath", correct: true},
+                {text: "To Rub", correct: false},
+
+            ]
+        },
+        {
+            question: "Escribir", 
+            answers: [
+                {text: "To Struggle", correct: false},
+                {text: "To Write", correct: true},
+                {text: "To Give", correct: false},
+                {text: "To Return", correct: false},
+
+            ]
+        }
+    ] 
+   
 }
 
 //Hide all screens to start except for home screen.
