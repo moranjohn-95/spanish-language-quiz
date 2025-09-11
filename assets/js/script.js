@@ -472,4 +472,25 @@ function loadQuestion() {
     }
     
 }
-    
+ 
+function showQuestion(currentQ) {
+    questionText.textContent = currentQ.question;
+    answersContainer.innerHTML = "";
+
+    currentQ.answers.forEach(answer => {
+        const btn = document.createElement("button");
+        btn.textContent = answer.text;
+        btn.classList.add("btn", "btn-outline-primary", "m-2");
+
+        btn.addEventListener("click", () => {
+            if (answer.correct) {
+                score++;
+            }
+            scoreDisplay.textContent = `Correct: ${score}/10`;
+            questionCount++;
+            loadQuestion();
+        });
+
+        answersContainer.appendChild(btn);
+    });
+}
