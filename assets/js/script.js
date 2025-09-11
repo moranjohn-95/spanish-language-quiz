@@ -249,8 +249,102 @@ const questions = {
 
             ]
         }
-    ] 
-   
+    ], 
+    
+    phrases: [
+        {
+            question: "¿qué hora es?",
+            answers: [
+                {text: "Are you hungry?", correct: false},
+                {text: "Can I try it?", correct: false},
+                {text: "Where is it?", correct: false},
+                {text: "What time is it?", correct: true}
+            ]
+        },
+         {
+            question: "¿De dónde eres?",
+            answers: [
+                {text: "Have you been here before?", correct: false},
+                {text: "Where are you from?", correct: true},
+                {text: "Where is it?", correct: false},
+                {text: "What time is it?", correct: false}
+            ]
+        },
+        {
+            question: "¿ella esta muy cansada",
+            answers: [
+                {text: "She is very tired", correct: true},
+                {text: "She is very hungry", correct: false},
+                {text: "She is very cold", correct: false},
+                {text: "She is very loud", correct: false}
+            ]
+        },
+        {
+            question: "Ellos son muy groseros",
+            answers: [
+                {text: "They are ery nice", correct: false},
+                {text: "They can't have that here", correct: false},
+                {text: "They are very funny", correct: false},
+                {text: "They are very rude", correct: true}
+            ]
+        },
+        {
+            question: "Mi hermana es vegana",
+            answers: [
+                {text: "My brother is vegan", correct: false},
+                {text: "My sister likes vegetables", correct: false},
+                {text: "My mother is vegetarian", correct: false},
+                {text: "My sister is vegan", correct: true}
+            ]
+        },
+        {
+            question: "¿Te gusta aquí?",
+            answers: [
+                {text: "Do you want to stay here?", correct: false},
+                {text: "Do you like it here?", correct: true},
+                {text: "Do they like it here?", correct: false},
+                {text: "Do you want a water?", correct: false}
+            ]
+        },
+        {
+            question: "¿Podemos vernos mañana?",
+            answers: [
+                {text: "Can we go tomorrow?", correct: false},
+                {text: "Can we eat soon?", correct: false},
+                {text: "Can we meet tomorrow?", correct: true},
+                {text: "Can we talk?", correct: false}
+            ]
+        },
+         {
+            question: "¿Puedo pagar por favor?",
+            answers: [
+                {text: "Can I pay please?", correct: true},
+                {text: "Can I see the menu please?", correct: false},
+                {text: "Can I have one more please?", correct: false},
+                {text: "Can I go please?", correct: false}
+            ]
+        },
+        {
+            question: "¿Hace calor hoy",
+            answers: [
+                {text: "It's hot today", correct: true},
+                {text: "It's on today", correct: false},
+                {text: "It's cold today", correct: false},
+                {text: "It's raining today", correct: false}
+            ]
+        },
+        {
+            question: "¿Me voy de vacaciones",
+            answers: [
+                {text: "I'm going home", correct: false},
+                {text: "I'm going on vacation", correct: true},
+                {text: "I'm feeling sick", correct: false},
+                {text: "I'm good at football", correct: false}
+            ]
+        },
+
+    ]
+
 }
 
 //Hide all screens to start except for home screen.
