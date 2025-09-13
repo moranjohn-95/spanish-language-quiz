@@ -507,3 +507,7 @@ function endQuiz() {
     endQuizArea.style.display = "block";
 }
 
+seeLeaderboardButton.addEventListener("click", () => {
+    endQuizArea.style.display = "none";
+    leaderboardArea.style.display = "block";
+})
