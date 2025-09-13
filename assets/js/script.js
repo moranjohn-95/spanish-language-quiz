@@ -457,12 +457,11 @@ function loadQuestion() {
 
     if (selectedCategory === "mix") {
         currentQuestions = [
-            questions.vocab,
-            questions.verbs,
-            questions.phrases
-        ];
+            ...questions.vocab,
+            ...questions.verbs,
+            ...questions.phrases
+        ]
 
-        currentQuestions = currentQuestions
         .sort(() => Math.random() - 0.5)
         .slice(0, 10);
     } else {
@@ -471,7 +470,7 @@ function loadQuestion() {
 
     if (questionCount < currentQuestions.length) {
         const currentQ = currentQuestions[questionCount];
-        showQuestion(currentQ);
+        showQuestion(currentQ), currentQuestions;
     } else {
         endQuiz();
     }
