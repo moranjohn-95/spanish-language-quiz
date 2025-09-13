@@ -43,6 +43,7 @@ let score = 0;
 let questionCount = 0;
 let quizzTimer;
 let timeLeft = 100;
+let leaderboard = [];
 
 // Questions section 
 
