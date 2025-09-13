@@ -480,7 +480,7 @@ function showQuestion(currentQ) {
     currentQ.answers.forEach(answer => {
         const btn = document.createElement("button");
         btn.textContent = answer.text;
-        btn.classList.add("btn", "btn-outline-primary", "m-2");
+        btn.classList.add("category-button");
 
         btn.addEventListener("click", () => {
             if (answer.correct) {
@@ -493,4 +493,9 @@ function showQuestion(currentQ) {
 
         answersContainer.appendChild(btn);
     });
+}
+
+function endQuiz() {
+    clearInterval(quizzTimer);
+    alert(`your Quiz score is entered! ${Score}/10, Time left: ${timeleft}`)
 }
