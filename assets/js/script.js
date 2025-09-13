@@ -510,4 +510,9 @@ function endQuiz() {
 seeLeaderboardButton.addEventListener("click", () => {
     endQuizArea.style.display = "none";
     leaderboardArea.style.display = "block";
-})
+});
+
+backtoQuizAgainButton.addEventListener("click", () => {
+    endQuizArea.style.display = "none";
+    homeQuizBoxArea.style.display = "block";
+});
