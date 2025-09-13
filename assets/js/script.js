@@ -498,5 +498,7 @@ function showQuestion(currentQ) {
 
 function endQuiz() {
     clearInterval(quizzTimer);
-    alert(`your Quiz score is entered! ${Score}/10, Time left: ${timeleft}`)
+    
+    questionsAnswersArea.style.display = "none";
+    endQuizArea.style.display = "block";
 }
