@@ -28,6 +28,10 @@ const scoreDisplay = document.getElementById("scoring");
 const questionText = document.getElementById("question-text");
 const answersContainer = document.getElementById("answers");
 
+// End of Quiz Buttons
+const seeLeaderboardButton = document.getElementById("see-leaderboard");
+const backtoQuizAgainButton = document.getElementById("back-to-quiz-again");
+
 // Leaderboard
 const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
@@ -502,3 +506,4 @@ function endQuiz() {
     questionsAnswersArea.style.display = "none";
     endQuizArea.style.display = "block";
 }
+
