@@ -253,7 +253,7 @@ const questions = {
     
     phrases: [
         {
-            question: "¿qué hora es?",
+            question: "¿Qué hora es?",
             answers: [
                 {text: "Are you hungry?", correct: false},
                 {text: "Can I try it?", correct: false},
@@ -271,7 +271,7 @@ const questions = {
             ]
         },
         {
-            question: "¿ella esta muy cansada",
+            question: "Ella esta muy cansada",
             answers: [
                 {text: "She is very tired", correct: true},
                 {text: "She is very hungry", correct: false},
@@ -325,7 +325,7 @@ const questions = {
             ]
         },
         {
-            question: "¿Hace calor hoy",
+            question: "Hace calor hoy",
             answers: [
                 {text: "It's hot today", correct: true},
                 {text: "It's on today", correct: false},
@@ -334,7 +334,7 @@ const questions = {
             ]
         },
         {
-            question: "¿Me voy de vacaciones",
+            question: "Me voy de vacaciones",
             answers: [
                 {text: "I'm going home", correct: false},
                 {text: "I'm going on vacation", correct: true},
@@ -355,6 +355,7 @@ function initializeScreens() {
     categoryOptionsArea.style.display = 'none';
     quizCountdownArea.style.display = 'none';
     questionsAnswersArea.style.display = 'none';
+    endQuizArea.style.display = 'none';
     leaderboardArea.style.display = 'none';
 }
 
