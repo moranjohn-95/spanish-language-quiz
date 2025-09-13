@@ -487,6 +487,9 @@ function showQuestion(currentQ) {
         btn.classList.add("category-button");
 
         btn.addEventListener("click", () => {
+        
+            Array.from(answersContainer.children).forEach(b => b.disbaled = true);
+
             if (answer.correct) {
                 score++;
             }
