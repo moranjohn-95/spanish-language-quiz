@@ -491,14 +491,19 @@ function showQuestion(currentQ) {
 
         btn.addEventListener("click", () => {
         
-            Array.from(answersContainer.children).forEach(b => b.disabled = true);
+        Array.from(answersContainer.children).forEach(b => b.disabled = true);
 
             if (answer.correct) {
                 score++;
             }
             scoreDisplay.textContent = `Correct: ${score}/10`;
             questionCount++;
-            loadQuestion();
+            
+            if (questionCount >= 10) {
+                endQuiz();
+            } else {
+                loadQuestion();
+            }
         });
 
         answersContainer.appendChild(btn);
