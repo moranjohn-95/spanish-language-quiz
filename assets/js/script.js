@@ -37,7 +37,7 @@ const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
 
 // End of Quiz 
-const endCaption = document.getElementById("endCaption");
+const endOfQuiz = document.getElementById("end-Of-quiz");
 
 //Initial Quiz Variables
 let username = "";
@@ -46,7 +46,6 @@ let score = 0;
 let questionCount = 0;
 let quizTimer;
 let timeLeft = 100;
-let leaderboardEntry = [];
 
 // Questions section 
 
