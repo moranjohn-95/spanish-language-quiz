@@ -451,6 +451,7 @@ if (selectedCategory === "mix") {
 
 startTimer();
 loadQuestion();
+
 }
 
 function startTimer() {
@@ -463,32 +464,18 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(quizTimer);
             endQuiz();
+
         }
     }, 1000);
 }
 
 // Load Questions
 function loadQuestion() {
-    let currentQuestions;
-
-    if (selectedCategory === "mix") {
-        currentQuestions = [
-            ...questions.vocab,
-            ...questions.verbs,
-            ...questions.phrases
-        ]
-
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 10);
-    } else {
-        currentQuestions = questions[selectedCategory]
-    }
-
     if (questionCount < currentQuestions.length) {
         const currentQ = currentQuestions[questionCount];
         showQuestion(currentQ), currentQuestions;
     } else {
-        endOfQuiz();
+        endQuiz();
     }
     
 }
