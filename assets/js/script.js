@@ -37,7 +37,7 @@ const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
 
 // End of Quiz 
-const endOfQuiz = document.getElementById("end-Of-quiz");
+const endOfQuiz = document.getElementById("end-of-quiz");
 
 //Initial Quiz Variables
 let username = "";
@@ -475,7 +475,7 @@ function loadQuestion() {
         const currentQ = currentQuestions[questionCount];
         showQuestion(currentQ), currentQuestions;
     } else {
-        endQuiz();
+        endOfQuiz();
     }
     
 }
@@ -503,6 +503,22 @@ function showQuestion(currentQ) {
 
         answersContainer.appendChild(btn);
     });
+}
+
+//To end quiz when time runs out or all questions are answered + save results
+
+function endQuiz() {
+    clearInterval(quizTimer);
+    questionsAnswersArea.style.display = "none";
+    endQuizArea.style.display = "block";
+
+    endOfQuiz.textContent = `${username}, you scored ${score}/10 with ${timeLeft} left!`;
+
+    const newResult = {
+        username: username,
+        score: score,
+        time: 100 - timeLeft
+    };
 }
 
 function updateLeaderboard() {
