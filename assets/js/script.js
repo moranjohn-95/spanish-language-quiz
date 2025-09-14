@@ -517,13 +517,26 @@ function endQuiz() {
     questionsAnswersArea.style.display = "none";
     endQuizArea.style.display = "block";
 
-    endOfQuiz.textContent = `${username}, you scored ${score}/10 with ${timeLeft} left!`;
+    endOfQuiz.textContent = `${username}, you scored ${score}/10 with ${timeLeft}seconds left!`;
 
-    const newResult = {
-        username: username,
-        score: score,
-        time: 100 - timeLeft
-    };
+    saveScore(username, score, 100 - timeLeft);
+}
+
+function saveScore(username, score, timeTaken) {
+    let leaderboard = JSON.parse(loacalStorage.getItem("leaderbaord")) || [];
+
+    leaderboard.push({ username, score, time: timeTaken});
+
+    leaderboard,sort((a, b) => {
+        if (b.score === a.score) {
+            return a.time -b.time;
+        }
+        return b.score - a.score;
+    });
+    
+    leaderboard = leaderboard.slice(0, 10);
+    localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
 }
 
 function updateLeaderboard() {
