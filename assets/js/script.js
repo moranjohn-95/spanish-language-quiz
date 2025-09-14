@@ -36,14 +36,17 @@ const backtoQuizAgainButton = document.getElementById("back-to-quiz-again");
 const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
 
+// End of Quiz 
+const endCaption = document.getElementById("endCaption");
+
 //Initial Quiz Variables
 let username = "";
 let selectedCategory = "";
 let score = 0;
 let questionCount = 0;
-let quizzTimer;
+let quizTimer;
 let timeLeft = 100;
-let leaderboard = [];
+let leaderboardEntry = [];
 
 // Questions section 
 
@@ -441,12 +444,12 @@ loadQuestion();
 function startTimer() {
     timerDisplay.textContent = timeLeft;
 
-    quizzTimer = setInterval(() => {
+    quizTimer = setInterval(() => {
         timeLeft--;
         timerDisplay.textContent = timeLeft;
 
         if (timeLeft <= 0) {
-            clearInterval(quizzTimer);
+            clearInterval(quizTimer);
             endQuiz();
         }
     }, 1000);
@@ -489,7 +492,7 @@ function showQuestion(currentQ) {
 
         btn.addEventListener("click", () => {
         
-            Array.from(answersContainer.children).forEach(b => b.disbaled = true);
+            Array.from(answersContainer.children).forEach(b => b.disabled = true);
 
             if (answer.correct) {
                 score++;
@@ -503,19 +506,17 @@ function showQuestion(currentQ) {
     });
 }
 
-function endQuiz() {
-    clearInterval(quizzTimer);
-    
-    questionsAnswersArea.style.display = "none";
-    endQuizArea.style.display = "block";
+function updateLeaderboard() {
+    leaderboardList.innerHTML = "";
+    leaderboardEntry.forEach((entry) => {
+        const li = document.createElement("li");
+        li.textContent = `${entry.username} - ${entry.score}/10`;
+        leaderboardList.appendChild(li);
+    });
 }
 
-seeLeaderboardButton.addEventListener("click", () => {
-    endQuizArea.style.display = "none";
-    leaderboardArea.style.display = "block";
-});
 
-backtoQuizAgainButton.addEventListener("click", () => {
-    endQuizArea.style.display = "none";
-    homeQuizBoxArea.style.display = "block";
-});
+
+
+
+
