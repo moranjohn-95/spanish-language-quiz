@@ -147,6 +147,11 @@ h3 {
  transition: background-color 0.5s, transform 0.2s;
 }
 
+button:hover {
+ background-color: #34495E;
+ transform: scale(1.0);
+}
+
 #questions-answers-area button {
 display: block;
 margin: 10px auto; 
