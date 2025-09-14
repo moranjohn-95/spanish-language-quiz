@@ -539,6 +539,8 @@ function saveScore(username, score, timeTaken) {
 
 }
 
+// Updates leaderboard for each user
+
 function updateLeaderboard() {
     leaderboardList.innerHTML = "";
     let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
@@ -550,8 +552,23 @@ function updateLeaderboard() {
     });
 }
 
+// Event listeners for leaderboard and back to quiz buttons
 
+seeLeaderboardButton.addEventListener("click", () => {
+    endQuizArea.style.display = "none";
+    leaderboardArea.style.display = "block";
+    updateLeaderboard();
+});
 
+backtoQuizAgainButton.addEventListener("click", () => {
+    endQuizArea.style.display = "none";
+    homeQuizBoxArea.style.display = "block";
+});
+
+homeButton.addEventListener("click", () => {
+    leaderboardArea.style.display = "none";
+    homeQuizBoxArea.style.display = "block";
+});
 
 
 
