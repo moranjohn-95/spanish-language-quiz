@@ -46,6 +46,7 @@ let score = 0;
 let questionCount = 0;
 let quizTimer;
 let timeLeft = 100;
+let currentQuestions = [];
 
 // Questions section 
 
@@ -435,6 +436,18 @@ function startQuiz() {
 
 quizCountdownArea.style.display = "none";
 questionsAnswersArea.style.display = "block";
+
+if (selectedCategory === "mix") {
+    currentQuestions = [
+        ...questions.vocab,
+        ...questions.verbs,
+        ...questions.phrases
+    ]
+   .sort(() => Math.random() - 0.5)
+   .slice(0, 10);
+} else {
+    currentQuestions = [...questions[selectedCategory]].sort(() => Math.random() - 0.5).slice(0, 10);
+}
 
 startTimer();
 loadQuestion();
