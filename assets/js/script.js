@@ -517,7 +517,7 @@ function endQuiz() {
     questionsAnswersArea.style.display = "none";
     endQuizArea.style.display = "block";
 
-    endOfQuiz.textContent = `${username}, you scored ${score}/10 with ${timeLeft}seconds left!`;
+    endOfQuiz.textContent = `${username}, you scored ${score}/10 with ${timeLeft} seconds left!`;
 
     saveScore(username, score, 100 - timeLeft);
 }
@@ -541,9 +541,11 @@ function saveScore(username, score, timeTaken) {
 
 function updateLeaderboard() {
     leaderboardList.innerHTML = "";
-    leaderboardEntry.forEach((entry) => {
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+    leaderboard.forEach((entry) => {
         const li = document.createElement("li");
-        li.textContent = `${entry.username} - ${entry.score}/10`;
+        li.textContent = `${entry.username} - ${entry.score}/10 in ${entry.time} seconds`;
         leaderboardList.appendChild(li);
     });
 }
