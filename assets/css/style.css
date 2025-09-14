@@ -174,20 +174,31 @@ max-width: 500px;
   text-align: left;
 }
 
-/*Make leaderboard layout more realstic*/
+/*Make leaderboard layout more life-like*/
 #leaderboard-area ol {
-    list-style-position: inside;
+    list-style: none;
+    counter-reset: rank;
     padding-left: 0;
-    margin: 0 0 1.5rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    margin: 0 0 1.5rem 0;
+    gap: 0.25rem;
 }
 
 #leaderboard-area li {
-  font-size: 1.5rem;
+  counter-increment: rank;
+  font-size: 1.25rem;
   padding: 0.5rem 1rem;
-  margin-bottom: 0.5;
-  border-radius: 20px;
+  border-radius: 15px;
   background: rgba(255, 255, 255, 0.20);
+  display: grid;
+  grid-template-columns: 2rem auto 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#leaderboard-area li::before {
+  content: counter(rank) ".";
+  font-weight: bold;
+  text-align: right;
 }
