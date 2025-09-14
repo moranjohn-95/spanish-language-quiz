@@ -523,11 +523,11 @@ function endQuiz() {
 }
 
 function saveScore(username, score, timeTaken) {
-    let leaderboard = JSON.parse(loacalStorage.getItem("leaderbaord")) || [];
+    let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
     leaderboard.push({ username, score, time: timeTaken});
 
-    leaderboard,sort((a, b) => {
+    leaderboard.sort((a, b) => {
         if (b.score === a.score) {
             return a.time -b.time;
         }
