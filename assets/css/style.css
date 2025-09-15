@@ -116,6 +116,10 @@ h3 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
 
+#username-input-area button {
+    margin-top: 1rem;
+}
+
 #end-of-quiz-buttons {
     display: flex;
     flex-direction: column;
