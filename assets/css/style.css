@@ -13,11 +13,13 @@ h1, h2 {
     font-family: var(--secondary-font);
     color: #F1C40F;
     padding-top: 0.5rem;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 h3 {
     font-family: var(--secondary-font);
     color: #F1C40F;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 /* Main box area styling */
@@ -249,8 +251,26 @@ max-width: 500px;
   color: #F1C40F; 
 }
 
+/*Spanish flag added creating a circle with columns */
 .spanish-flag {
-  width: 60px;  
-  height: 60px;
+  width: 80px;  
+  height: 80px;
   border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.stripe {
+    flex: 1;
+}
+
+.stripe.red {
+    background-color: #B12631;
+}
+
+.stripe.yellow {
+    background-color: #F1C40F;
 }
