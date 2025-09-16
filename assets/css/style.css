@@ -259,7 +259,7 @@ max-width: 500px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: auto;
+  margin: 1rem auto 0;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
