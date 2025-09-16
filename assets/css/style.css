@@ -83,6 +83,7 @@ h3 {
 }
 
 #end-of-quiz .time-left {
+    color: #F1C40F;
     font-size: 1.5rem;
     font-weight: bold;
 }
