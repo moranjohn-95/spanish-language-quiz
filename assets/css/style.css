@@ -71,8 +71,8 @@ h3 {
 
 /*Styling to make end of quiz score standout*/
 #end-of-quiz {
-    font-size: 1.5rem;
     color: #ECF0F1;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
