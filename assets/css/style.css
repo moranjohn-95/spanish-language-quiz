@@ -26,7 +26,7 @@ h3 {
 /*Styling for landing page box area*/
 #home-quiz-box-area
 {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -38,7 +38,7 @@ h3 {
 /*Styling for Instructions box*/
 #instruction-box-area
 {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -50,7 +50,7 @@ h3 {
 /*Styling for username input area*/
 #username-input-area
 {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -62,7 +62,7 @@ h3 {
 /*Styling for quiz box area*/
 #end-quiz-area
 {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -93,7 +93,7 @@ h3 {
 
 #category-options-area
 {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -103,7 +103,7 @@ h3 {
 }
 
 #quiz-countdown-area {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -118,7 +118,7 @@ h3 {
 }
 
 #questions-answers-area {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin: auto;
@@ -141,7 +141,7 @@ h3 {
 }
 
 #leaderboard-area {
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.02);
     border-radius:20px;
     max-width: 800px;
     margin:  3rem auto;
