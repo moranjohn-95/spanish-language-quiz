@@ -69,6 +69,25 @@ h3 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
 
+/*Styling to make end of quiz score standout*/
+#end-of-quiz {
+    font-size: 1.5rem;
+    color: #ECF0F1;
+    font-weight: bold;
+}
+
+#end-of-quiz .score-number {
+    color: #F1C40F;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#end-of-quiz .time-left {
+    color: #F1C40F;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 
 #category-options-area
 {
@@ -111,7 +130,7 @@ h3 {
     border-radius:20px;
     max-width: 800px;
     margin:  3rem auto;
-    margin-top: 10rem;
+    margin-top: 1rem;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
 }
@@ -178,7 +197,7 @@ max-width: 500px;
   position: relative;
   font-size: 1.25rem;
   text-align: left;
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 15px;
   line-height: 1.5;
   color: #ECF0F1;
@@ -192,8 +211,8 @@ max-width: 500px;
 
 /*Make leaderboard layout more life-like*/
 #leaderboard-area ol {
-    list-style: none;
-    counter-reset: rank;
+    list-style-position: inside;
+    counter-reset: step;
     padding-left: 0;
     display: flex;
     flex-direction: column;
@@ -202,19 +221,17 @@ max-width: 500px;
 }
 
 #leaderboard-area li {
-  counter-increment: rank;
+  position: relative;
   font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+  text-align: left;
+  padding: 0.5rem;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.20);
-  display: grid;
-  grid-template-columns: 2rem auto 1fr;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
   gap: 0.5rem;
+  color: #ECF0F1;
 }
 
-#leaderboard-area li::before {
-  content: counter(rank) ".";
+#leaderboard-area li::marker {
   font-weight: bold;
-  text-align: right;
+  color: #F1C40F; 
 }

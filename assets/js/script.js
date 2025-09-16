@@ -290,7 +290,7 @@ const questions = {
         {
             question: "Ellos son muy groseros",
             answers: [
-                {text: "They are ery nice", correct: false},
+                {text: "They are very nice", correct: false},
                 {text: "They can't have that here", correct: false},
                 {text: "They are very funny", correct: false},
                 {text: "They are very rude", correct: true}
@@ -517,7 +517,8 @@ function endQuiz() {
     questionsAnswersArea.style.display = "none";
     endQuizArea.style.display = "block";
 
-    endOfQuiz.textContent = `${username}, you scored ${score}/10 with ${timeLeft} seconds left!`;
+    endOfQuiz.innerHTML = `${username}, you scored <span class="score-number">${score}
+    /10</span> with <span class="time-left">${timeLeft} seconds</span> left!`;
 
     saveScore(username, score, 100 - timeLeft);
 }
