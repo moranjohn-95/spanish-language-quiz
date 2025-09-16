@@ -518,7 +518,7 @@ function endQuiz() {
     endQuizArea.style.display = "block";
 
     endOfQuiz.innerHTML = `${username}, you scored <span class="score-number">${score}
-    /10</span> with <span class="time-left">${timeLeft} seconds</span> left!`;
+    /10</span> with <span class="time-left">${timeLeft}</span>eft!`;
 
     saveScore(username, score, 100 - timeLeft);
 }
