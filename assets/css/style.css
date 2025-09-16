@@ -248,3 +248,9 @@ max-width: 500px;
   font-weight: bold;
   color: #F1C40F; 
 }
+
+.spanish-flag {
+  width: 60px;  
+  height: 60px;
+  border-radius: 50%;
+}
