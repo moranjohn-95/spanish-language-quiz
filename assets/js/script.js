@@ -434,6 +434,9 @@ function startQuiz() {
     questionCount = 0;
     timeLeft = 100;
 
+//Added to set counter when quiz starts / fix issue of counter starting after first question
+scoreDisplay.textContent = `Correct: ${score}/10`;
+
 quizCountdownArea.style.display = "none";
 questionsAnswersArea.style.display = "block";
 
