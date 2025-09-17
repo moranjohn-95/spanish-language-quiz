@@ -193,11 +193,12 @@ button:hover {
  background-color: #273846;
  transform: scale(1.05);
 }
+
 /*Remove default bootsrap border for buttons*/
 button:focus,
 button:active {
-    outline: none;
-    box-shadow: none;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 #questions-answers-area button {
