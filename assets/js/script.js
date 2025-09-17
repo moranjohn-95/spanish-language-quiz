@@ -524,6 +524,9 @@ function endQuiz() {
     with <span class="time-left">${timeLeft}</span> seconds left!`;
 
     saveScore(username, score, 100 - timeLeft);
+    
+    //Added to Start firewoks when score is announced
+    startFireworks();
 }
 
 function saveScore(username, score, timeTaken) {
@@ -575,6 +578,8 @@ homeButton.addEventListener("click", () => {
 });
 
 //Fireworks effect from firework-js / https://github.com/crashmax-dev/fireworks-js
+function startFireworks() {
+const container =document.getElementById('fireworks-celebration')
 const fireworks = new Fireworks.default(container, {
   autoresize: true,
   opacity: 0.5,
@@ -595,3 +600,5 @@ const fireworks = new Fireworks.default(container, {
 });
 fireworks.start();
 
+setTimeout(() => fireworks.stop(), 5000);
+}
