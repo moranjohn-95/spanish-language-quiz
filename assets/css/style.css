@@ -69,6 +69,7 @@ h3 {
     margin-top: 10rem;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+    position: relative;
 }
 
 /*Styling to make end of quiz score standout*/
@@ -298,3 +299,8 @@ max-width: 500px;
   border: 2px solid #F1C40F;
   box-shadow: none;
 }
+
+#fireworks-celebration {
+    position: fixed;
+}
+
