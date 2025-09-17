@@ -193,6 +193,12 @@ button:hover {
  background-color: #273846;
  transform: scale(1.05);
 }
+/*Remove default bootsrap border for buttons*/
+button:focus,
+button:active {
+    outline: none;
+    box-shadow: none;
+}
 
 #questions-answers-area button {
 display: block;
@@ -277,4 +283,17 @@ max-width: 500px;
 
 .stripe.yellow {
     background-color: #F1C40F;
+}
+
+/*Remove bootsrap deafult coloring for border of input & match to color theme */
+#username-input {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+}
+
+#username-input:focus {
+  outline: none;
+  border: 2px solid #F1C40F;
+  box-shadow: none;
 }
