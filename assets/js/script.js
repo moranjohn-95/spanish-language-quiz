@@ -577,7 +577,7 @@ homeButton.addEventListener("click", () => {
     homeQuizBoxArea.style.display = "block";
 });
 
-//Fireworks effect from firework-js / https://github.com/crashmax-dev/fireworks-js
+//Fireworks effect taken from firework-js / https://github.com/crashmax-dev/fireworks-js
 function startFireworks() {
 const container =document.getElementById('fireworks-celebration')
 const fireworks = new Fireworks.default(container, {
