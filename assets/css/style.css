@@ -191,7 +191,7 @@ h3 {
 
 button:hover {
  background-color: #273846;
- transform: scale(1.0);
+ transform: scale(1.05);
 }
 
 #questions-answers-area button {
