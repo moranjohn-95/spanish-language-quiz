@@ -76,7 +76,7 @@ h3 {
 
 /*Styling to make end of quiz score standout*/
 #end-of-quiz {
-    color: #ECF0F1;
+    color: #151D26;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -84,11 +84,11 @@ h3 {
 #end-of-quiz .score-number {
     color: #F1C40F;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 #end-of-quiz .time-left {
-    color: #F1C40F;
+    color: #151D26;
     font-size: 1.5rem;
     font-weight: bold;
 }
