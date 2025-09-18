@@ -600,5 +600,5 @@ const fireworks = new Fireworks.default(container, {
 });
 fireworks.start();
 
-setTimeout(() => fireworks.stop(), 3000);
+setTimeout(() => fireworks.stop(), 2000);
 }
