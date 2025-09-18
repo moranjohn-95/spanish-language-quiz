@@ -322,12 +322,11 @@ max-width: 500px;
     }
 
     #home-quiz-box-area h1 {
-        font-size: 1.50rem;
-        white-space: nowrap;
+        font-size: 1.30rem;
 
     }
     #home-quiz-box-area h2{
-        font-size: 1.25rem;
+        font-size: 1.20rem;
         white-space: nowrap;
     }
 }
