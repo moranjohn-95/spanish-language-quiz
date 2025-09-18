@@ -204,6 +204,10 @@ button:active {
     box-shadow: none !important;
 }
 
+button:active {
+    transform:scale(1);
+}
+
 #questions-answers-area button {
 display: block;
 margin: 10px auto; 
