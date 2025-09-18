@@ -495,6 +495,9 @@ function showQuestion(currentQ) {
         btn.addEventListener("click", () => {
         
         Array.from(answersContainer.children).forEach(b => b.disabled = true);
+        
+    //Added to fix button issue on mobile 
+        btn.blur();
 
             if (answer.correct) {
                 score++;
