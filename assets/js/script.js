@@ -45,7 +45,7 @@ let selectedCategory = "";
 let score = 0;
 let questionCount = 0;
 let quizTimer;
-let timeLeft = 100;
+let timeLeft = 60;
 let currentQuestions = [];
 
 // Questions section 
@@ -432,7 +432,7 @@ const interval = setInterval(() => {
 function startQuiz() {
     score =0;
     questionCount = 0;
-    timeLeft = 100;
+    timeLeft = 60;
 
 //Added to set counter when quiz starts / fix issue of counter starting after first question
 scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
