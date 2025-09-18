@@ -311,3 +311,13 @@ max-width: 500px;
     pointer-events: none;
 }
 
+/*Media Queries */
+
+@media (max-width: 576px) {
+    #home-quiz-box-area h1 {
+        font-size: 1.25rem;
+    }
+    #home-quiz-box-area h2{
+        font-size: 1.00rem;
+    }
+}
