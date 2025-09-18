@@ -435,7 +435,7 @@ function startQuiz() {
     timeLeft = 100;
 
 //Added to set counter when quiz starts / fix issue of counter starting after first question
-scoreDisplay.textContent = `Correct: ${score}/10`;
+scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
 
 quizCountdownArea.style.display = "none";
 questionsAnswersArea.style.display = "block";
@@ -458,11 +458,11 @@ loadQuestion();
 }
 
 function startTimer() {
-    timerDisplay.textContent = timeLeft;
+    timerDisplay.innerHTML  = `<span class="highlight">${timeLeft}s</span>`;
 
     quizTimer = setInterval(() => {
         timeLeft--;
-        timerDisplay.textContent = timeLeft;
+        timerDisplay.innerHTML  = `<span class="highlight">${timeLeft}s</span>`;
 
         if (timeLeft <= 0) {
             clearInterval(quizTimer);
@@ -499,7 +499,7 @@ function showQuestion(currentQ) {
             if (answer.correct) {
                 score++;
             }
-            scoreDisplay.textContent = `Correct: ${score}/10`;
+            scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
             questionCount++;
             
             if (questionCount >= 10) {
