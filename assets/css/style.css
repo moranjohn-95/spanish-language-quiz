@@ -312,6 +312,12 @@ max-width: 500px;
     pointer-events: none;
 }
 
+/*Added to highlight timer and correct questions during quiz */
+.highlight {
+color: #F1C40F;
+font-weight: bold;
+}
+
 /*Media Queries */
 
 @media (max-width: 576px) {
@@ -329,11 +335,5 @@ max-width: 500px;
         font-size: 1.20rem;
         white-space: nowrap;
     }
-
-/*Added to highlight timer and correct questions during quiz */
-.highlight {
-color: #F1C40F;
-font-weight: bold;
-}
 
 }
