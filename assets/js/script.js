@@ -494,10 +494,14 @@ function showQuestion(currentQ) {
 
         btn.addEventListener("click", () => {
         
-        Array.from(answersContainer.children).forEach(b => b.disabled = true);
-        
-    //Added to fix button issue on mobile 
-        btn.blur();
+        //Disable buttons after selection is complete 
+        Array.from(answersContainer.children).forEach(b => {
+                b.disabled = true;
+
+                b.blur();
+            });
+
+        document.activeElement.blur();
 
             if (answer.correct) {
                 score++;
