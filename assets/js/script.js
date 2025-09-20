@@ -397,14 +397,20 @@ startQuizButton.addEventListener("click", () => {
 });
 
 
-//Store username 
+//Store username - CHeck if its empty and min/max charecter count 
 submitUsernameButton.addEventListener("click", () => {
     const enteredUsername = usernameInput.value.trim();
+    
     if (!enteredUsername) {
         alert("Please enter a username!");
         return;
     }
 
+    if (enteredUsername.length < 3 || enteredUsername.length > 10) {
+        alert("Username must be between 3 and 10 characters.");
+        return;
+    }
+    
     username = enteredUsername;
     usernameInput.value = "";
 
