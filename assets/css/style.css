@@ -204,8 +204,7 @@ button:active {
     transform:scale(1);
 }
 
-
-#questions-answers-area button {
+#answers .answer-button {
 display: block;
 margin: 10px auto; 
 text-align: center;  
@@ -322,10 +321,20 @@ font-weight: bold;
 /* Fix quiz buttons from remaining selected on mobile */
 
 #answers .category-button:focus,
-#answers .category-button:active {
+#answers .category-button:active,
+#answers .answer-button:focus-visible {
     outline: none !important;
     box-shadow: none !important;
     transform: none !important;
+    background-color: #1A252F;
+}
+
+button, 
+.answer-button,
+.category-button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 
@@ -351,7 +360,7 @@ font-weight: bold;
 
 /* Hover effects for desktop only to fix bug issue on mobile */
 @media (hover: hover) and (pointer: fine) {
-    button:hover {
+    button:not(:disabled):hover {
         transform: scale(1.05)
     }
 }

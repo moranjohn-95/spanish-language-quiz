@@ -410,7 +410,7 @@ submitUsernameButton.addEventListener("click", () => {
 });
 
 //Category Selection & Loading Countdown
-document.querySelectorAll(".category-button").forEach(btn => {
+document.querySelectorAll("#category-options-area .category-button").forEach(btn => {
     btn.addEventListener("click", () => {
         selectedCategory = btn.dataset.category;
         startCountdown();
@@ -503,7 +503,7 @@ function showQuestion(currentQ) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.textContent = answer.text;
-    btn.classList.add("category-button");
+    btn.classList.add("answer-button");
     btn.style.touchAction = "manipulation";
 
     const activate = (e) => {
