@@ -36,6 +36,10 @@ const backtoQuizAgainButton = document.getElementById("back-to-quiz-again");
 const leaderboardList = document.getElementById("leaderboard-list");
 const homeButton = document.getElementById("home-button");
 
+// NAV Bar Navigation
+const navHome = document.getElementById("nav-home");
+const navLeaderboard = document.getElementById("nav-leaderboard");
+
 // End of Quiz 
 const endOfQuiz = document.getElementById("end-of-quiz");
 
@@ -618,6 +622,37 @@ backtoQuizAgainButton.addEventListener("click", () => {
 homeButton.addEventListener("click", () => {
     leaderboardArea.style.display = "none";
     homeQuizBoxArea.style.display = "block";
+});
+
+// Event listeners to show home screen or leaderboard whenever clicked upon 
+navHome.addEventListener("click", (e) => {
+    e.preventDefault();
+    instructionBoxArea.style.display = "none";
+    usernameInputArea.style.display = "none";
+    categoryOptionsArea.style.display = "none";
+    quizCountdownArea.style.display = "none";
+    questionsAnswersArea.style.display = "none";
+    endQuizArea.style.display = "none";
+    leaderboardArea.style.display = "none";
+    homeQuizBoxArea.style.display = "block";
+
+    navHome.classList.add("active");
+    navLeaderboard.classList.remove("active");
+});
+
+navLeaderboard.addEventListener("click", (e) => {
+    e.preventDefault();
+    homeQuizBoxArea.style.display = "none";
+    instructionBoxArea.style.display = "none";
+    usernameInputArea.style.display = "none";
+    categoryOptionsArea.style.display = "none";
+    quizCountdownArea.style.display = "none";
+    questionsAnswersArea.style.display = "none";
+    endQuizArea.style.display = "none";
+
+    leaderboardArea.style.display = "block";
+    updateLeaderboard();
+
 });
 
 //Fireworks effect taken from firework-js / https://github.com/crashmax-dev/fireworks-js

@@ -391,15 +391,16 @@ display: flex;
   gap: 2rem; 
 }
 
-#header-area .nav-area a {
+#header-area .nav-area .nav-link {
   text-decoration: none;
   font-family: var(--primary-font);
   font-size: 1.1rem;
   font-weight: bold;
   color: #1A252F;
+  cursor: pointer; 
 }
 
-#header-area .nav-area a:hover {
+#header-area .nav-area .nav-link:hover {
   color: #F1C40F;
 }
 
