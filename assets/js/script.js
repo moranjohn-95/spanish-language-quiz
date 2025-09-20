@@ -520,9 +520,19 @@ function showQuestion(currentQ) {
                 loadQuestion();
             }
         });
+        
+        // Added for mobile issue relating to buttons remaining highllighted after click
+        btn.addEventListener("touchstart", (e) => {
+            e.preventDefault();
+            btn.click();
+        });
 
         answersContainer.appendChild(btn);
     });
+
+    setTimeout(() => {
+        Array.from(answersContainer.querySelectorAll("button")).forEach(b => b.blur());
+    }, 0);
 }
 
 //To end quiz when time runs out or all questions are answered + save results
