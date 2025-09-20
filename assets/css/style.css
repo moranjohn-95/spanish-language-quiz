@@ -202,11 +202,9 @@ button:focus,
 button:active {
     outline: none !important;
     box-shadow: none !important;
-}
-
-button:active {
     transform:scale(1);
 }
+
 
 #questions-answers-area button {
 display: block;
