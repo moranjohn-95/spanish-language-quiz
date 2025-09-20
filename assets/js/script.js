@@ -488,7 +488,7 @@ function showQuestion(currentQ) {
     answersContainer.innerHTML = "";
 
     if (document.activeElement && document.activeElement.tagName === "BUTTON") {
-        Document.activeElement.blur();
+        document.activeElement.blur();
     }
 
     currentQ.answers.forEach(answer => {
@@ -501,11 +501,12 @@ function showQuestion(currentQ) {
         //Disable buttons after selection is complete 
         Array.from(answersContainer.children).forEach(b => {
                 b.disabled = true;
-
                 b.blur();
             });
-
-        document.activeElement.blur();    
+            
+            if (document.activeElement) {
+             document.activeElement.blur(); 
+            }   
 
             if (answer.correct) {
                 score++;
@@ -534,7 +535,7 @@ function endQuiz() {
     endOfQuiz.innerHTML = `${username}, you scored <span class="score-number">${score}/10</span> 
     with <span class="time-left">${timeLeft}</span> seconds left!`;
 
-    saveScore(username, score, 100 - timeLeft);
+    saveScore(username, score, 60 - timeLeft);
     
     //Added to Start firewoks when score is announced
     startFireworks();
