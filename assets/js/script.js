@@ -40,10 +40,9 @@ const homeButton = document.getElementById("home-button");
 const endOfQuiz = document.getElementById("end-of-quiz");
 
 //For button touch issue on mobile 
-const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-if (isTouch) {
-  document.body.classList.add('is-touch');
-}
+const isTouch =
+  (window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches) ||
+  ('ontouchstart' in window);
 
 //Initial Quiz Variables
 let username = "";
@@ -482,7 +481,7 @@ function startTimer() {
 function loadQuestion() {
     if (questionCount < currentQuestions.length) {
         const currentQ = currentQuestions[questionCount];
-        showQuestion(currentQ), currentQuestions;
+        showQuestion(currentQ);
     } else {
         endQuiz();
     }
@@ -490,71 +489,69 @@ function loadQuestion() {
 }
  
 function showQuestion(currentQ) {
-    questionText.textContent = currentQ.question;
-    answersContainer.innerHTML = "";
+      questionText.textContent = currentQ.question;
+      answersContainer.innerHTML = "";
 
-    if (document.activeElement && document.activeElement.tagName === "BUTTON") {
+  if (document.activeElement && document.activeElement.tagName === "BUTTON") {
+    document.activeElement.blur();
+  }
+  if (window.getSelection) {
+    try { window.getSelection().removeAllRanges(); } catch (_) {}
+  }
+
+  currentQ.answers.forEach(answer => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = answer.text;
+    btn.classList.add("category-button");
+    btn.style.touchAction = "manipulation";
+
+    const activate = (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+
+      // disable answer buttons after use 
+      Array.from(answersContainer.children).forEach(b => {
+        b.disabled = true;
+        if (b instanceof HTMLElement) b.blur();
+      });
+      if (document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
+      }
+
+      if (answer.correct) score++;
+      scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
+      questionCount++;
+
+      const goNext = () => {
+        if (questionCount >= 10) endQuiz();
+        else loadQuestion();
+      };
+
+      // Add pause to ensure active state is cleared 
+      if (isTouch) {
+        answersContainer.style.pointerEvents = "none";
+        setTimeout(() => {
+          answersContainer.style.pointerEvents = "";
+          goNext();
+        }, 60);
+      } else {
+        goNext();
+      }
+    };
+
+    let used = false;
+    const once = (fn) => (evt) => { if (used) return; used = true; fn(evt); };
+
+    if ("PointerEvent" in window) {
+      btn.addEventListener("pointerup", once(activate), { passive: false });
+      btn.addEventListener("pointerdown", () => btn.blur(), { passive: true });
+    } else if (isTouch) {
+      // Aded to ensure functionality on older browsers
+      btn.addEventListener("touchend", once(activate), { passive: false });
+      btn.addEventListener("touchstart", () => btn.blur(), { passive: true });
+    } else {
+      btn.addEventListener("click", once(activate));
     }
-     
-    if (window.getSelection) {
-        try { window.getSelection().removeAllRanges(); } catch (_) {}
-    }
-
-    currentQ.answers.forEach(answer => {
-        const btn = document.createElement("button");
-        btn.type = "button";                      
-        btn.textContent = answer.text;
-        btn.classList.add("category-button");
-
-        const activate = (e) => {
-            if (isTouch) e.preventDefault();
-        
-        //Disable buttons after selection is complete
-        Array.from(answersContainer.children).forEach(b => {
-                b.disabled = true;
-                if (b instanceof HTMLElement) b.blur();
-            });
-            if (document.activeElement && document.activeElement instanceof HTMLElement) {
-                document.activeElement.blur();
-            }
-
-            if (answer.correct) {
-                score++;
-            }
-            scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
-            questionCount++;
-
-            const goNext = () => {
-                if (questionCount >= 10) {
-                    endQuiz();
-                } else {
-                    loadQuestion();
-                }
-            };
-            
-            //Added to prevent highlighted button from carryng over to next question
-            if (isTouch) {
-                answersContainer.style.pointerEvents = 'none';
-                setTimeout(() => {
-                    answersContainer.style.pointerEvents = '';
-                    goNext();
-                }, 60);
-            } else {
-                goNext();
-            }
-        };
-
-        if (isTouch) {
-            btn.addEventListener('pointerp', activate, { passive: false });
-            btn.addEventListener('pointerdown', (e) => {
-                e.preventDefault();
-                btn.blur();
-            }, { passive: false });
-        } else {
-            btn.addEventListener('click', activate);
-        }
-
         answersContainer.appendChild(btn);
     });
 }
