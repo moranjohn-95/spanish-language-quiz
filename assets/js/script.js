@@ -501,7 +501,7 @@ function showQuestion(currentQ) {
                 b.blur();
             });
 
-        document.activeElement.blur();
+        document.activeElement.blur();    
 
             if (answer.correct) {
                 score++;
