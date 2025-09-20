@@ -487,6 +487,10 @@ function showQuestion(currentQ) {
     questionText.textContent = currentQ.question;
     answersContainer.innerHTML = "";
 
+    if (document.activeElement && document.activeElement.tagName === "BUTTON") {
+        Document.activeElement.blur();
+    }
+
     currentQ.answers.forEach(answer => {
         const btn = document.createElement("button");
         btn.textContent = answer.text;
