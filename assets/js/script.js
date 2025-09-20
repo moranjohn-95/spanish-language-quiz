@@ -532,7 +532,7 @@ function showQuestion(currentQ) {
 
     setTimeout(() => {
         Array.from(answersContainer.querySelectorAll("button")).forEach(b => b.blur());
-    }, 0);
+    }, 150);
 }
 
 //To end quiz when time runs out or all questions are answered + save results
