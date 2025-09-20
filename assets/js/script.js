@@ -39,6 +39,12 @@ const homeButton = document.getElementById("home-button");
 // End of Quiz 
 const endOfQuiz = document.getElementById("end-of-quiz");
 
+//For button touch issue on mobile 
+const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+if (isTouch) {
+  document.body.classList.add('is-touch');
+}
+
 //Initial Quiz Variables
 let username = "";
 let selectedCategory = "";
@@ -490,43 +496,67 @@ function showQuestion(currentQ) {
     if (document.activeElement && document.activeElement.tagName === "BUTTON") {
         document.activeElement.blur();
     }
+     
+    if (window.getSelection) {
+        try { window.getSelection().removeAllRanges(); } catch (_) {}
+    }
 
     currentQ.answers.forEach(answer => {
         const btn = document.createElement("button");
+        btn.type = "button";                      
         btn.textContent = answer.text;
         btn.classList.add("category-button");
 
-        btn.addEventListener("click", () => {
+        const activate = (e) => {
+            if (isTouch) e.preventDefault();
         
-        //Disable buttons after selection is complete 
+        //Disable buttons after selection is complete
         Array.from(answersContainer.children).forEach(b => {
                 b.disabled = true;
-                b.blur();
+                if (b instanceof HTMLElement) b.blur();
             });
-            
-            if (document.activeElement) {
-             document.activeElement.blur(); 
-            }   
+            if (document.activeElement && document.activeElement instanceof HTMLElement) {
+                document.activeElement.blur();
+            }
 
             if (answer.correct) {
                 score++;
             }
             scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
             questionCount++;
+
+            const goNext = () => {
+                if (questionCount >= 10) {
+                    endQuiz();
+                } else {
+                    loadQuestion();
+                }
+            };
             
-            if (questionCount >= 10) {
-                endQuiz();
+            //Added to prevent highlighted button from carryng over to next question
+            if (isTouch) {
+                answersContainer.style.pointerEvents = 'none';
+                setTimeout(() => {
+                    answersContainer.style.pointerEvents = '';
+                    goNext();
+                }, 60);
             } else {
-                loadQuestion();
+                goNext();
             }
-        });
-        
+        };
+
+        if (isTouch) {
+            btn.addEventListener('pointerp', activate, { passive: false });
+            btn.addEventListener('pointerdown', (e) => {
+                e.preventDefault();
+                btn.blur();
+            }, { passive: false });
+        } else {
+            btn.addEventListener('click', activate);
+        }
+
         answersContainer.appendChild(btn);
     });
-
-    setTimeout(() => {
-        Array.from(answersContainer.querySelectorAll("button")).forEach(b => b.blur());
-    }, 120);
 }
 
 //To end quiz when time runs out or all questions are answered + save results
