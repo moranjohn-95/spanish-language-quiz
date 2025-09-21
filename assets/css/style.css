@@ -438,6 +438,7 @@ display: flex;
         font-size: 1.20rem;
         white-space: nowrap;
     }
+}
 
 /* Make NAV Bar Responsive on mid to small screens */    
 @media (max-width: 768px) {
@@ -463,9 +464,6 @@ display: flex;
   ul.nav-links .nav-link {
     padding: 0.5rem 0;
   }
-}
-
-
 }
 
 /* Hover effects for desktop only to fix bug issue on mobile */
