@@ -439,6 +439,33 @@ display: flex;
         white-space: nowrap;
     }
 
+/* Make NAV Bar Responsive on mid to small screens */    
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  ul.nav-links {
+    background-color: #B12631;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  ul.nav-links.show {
+    display: flex;
+  }
+
+  ul.nav-links .nav-link {
+    padding: 0.5rem 0;
+  }
+}
+
+
 }
 
 /* Hover effects for desktop only to fix bug issue on mobile */
