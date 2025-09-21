@@ -40,6 +40,10 @@ const homeButton = document.getElementById("home-button");
 const navHome = document.getElementById("nav-home");
 const navLeaderboard = document.getElementById("nav-leaderboard");
 
+// NAV Bar Toggle
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
 // End of Quiz 
 const endOfQuiz = document.getElementById("end-of-quiz");
 
@@ -410,7 +414,7 @@ submitUsernameButton.addEventListener("click", () => {
         alert("Username must be between 3 and 10 characters.");
         return;
     }
-    
+
     username = enteredUsername;
     usernameInput.value = "";
 
@@ -659,6 +663,17 @@ navLeaderboard.addEventListener("click", (e) => {
     leaderboardArea.style.display = "block";
     updateLeaderboard();
 
+});
+
+// Event Listner for NAV Bar Toggle
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
 });
 
 //Fireworks effect taken from firework-js / https://github.com/crashmax-dev/fireworks-js
