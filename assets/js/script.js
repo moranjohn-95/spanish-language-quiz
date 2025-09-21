@@ -447,7 +447,7 @@ const interval = setInterval(() => {
     }, 1000);
 }
 
-//Start Qui and 100s Timer
+//Start Qui and 60s Timer
 function startQuiz() {
     score =0;
     questionCount = 0;
@@ -503,15 +503,14 @@ function loadQuestion() {
 }
  
 function showQuestion(currentQ) {
-      questionText.textContent = currentQ.question;
-      answersContainer.innerHTML = "";
-
-  if (document.activeElement && document.activeElement.tagName === "BUTTON") {
+ //Added to ensure nothing remains focused when moving onto next question 
+  if (document.activeElement && document.activeElement instanceof HTMLElement) {
     document.activeElement.blur();
   }
-  if (window.getSelection) {
-    try { window.getSelection().removeAllRanges(); } catch (_) {}
-  }
+  try { window.getSelection && window.getSelection().removeAllRanges(); } catch (_) {}
+
+      questionText.textContent = currentQ.question;
+      answersContainer.innerHTML = "";
 
   currentQ.answers.forEach(answer => {
     const btn = document.createElement("button");
@@ -523,14 +522,16 @@ function showQuestion(currentQ) {
     const activate = (e) => {
       if (e && e.preventDefault) e.preventDefault();
 
+      if (document.activeElement && document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+      btn.blur();
+
       // disable answer buttons after use 
       Array.from(answersContainer.children).forEach(b => {
         b.disabled = true;
         if (b instanceof HTMLElement) b.blur();
       });
-      if (document.activeElement instanceof HTMLElement) {
-        document.activeElement.blur();
-      }
 
       if (answer.correct) score++;
       scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
@@ -549,7 +550,7 @@ function showQuestion(currentQ) {
           goNext();
         }, 60);
       } else {
-        goNext();
+        Promise.resolve().then(goNext);
       }
     };
 
@@ -557,12 +558,13 @@ function showQuestion(currentQ) {
     const once = (fn) => (evt) => { if (used) return; used = true; fn(evt); };
 
     if ("PointerEvent" in window) {
+      btn.addEventListener("pointerdown",() => btn.blur(), { passive: true });
       btn.addEventListener("pointerup", once(activate), { passive: false });
-      btn.addEventListener("pointerdown", () => btn.blur(), { passive: true });
+      btn.addEventListener("click", (ev)=> ev.preventDefault(), { passive: false }); 
     } else if (isTouch) {
       // Aded to ensure functionality on older browsers
-      btn.addEventListener("touchend", once(activate), { passive: false });
       btn.addEventListener("touchstart", () => btn.blur(), { passive: true });
+      btn.addEventListener("touchend", once(activate), { passive: false });
     } else {
       btn.addEventListener("click", once(activate));
     }
@@ -665,14 +667,29 @@ navLeaderboard.addEventListener("click", (e) => {
 
 });
 
-// Event Listner for NAV Bar Toggle
+//Toggle and NAV Bar Area
+function setMenuExpanded(expanded) {
+  menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+}
+
 menuToggle.addEventListener("click", () => {
+  const now = !navLinks.classList.contains("show");
   navLinks.classList.toggle("show");
+  setMenuExpanded(now);
+  menuToggle.blur();
+});
+
+menuToggle.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    menuToggle.click();
+  }
 });
 
 document.querySelectorAll(".nav-link").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("show");
+    setMenuExpanded(false);
   });
 });
 
