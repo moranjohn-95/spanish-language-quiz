@@ -400,6 +400,10 @@ display: flex;
   gap: 2rem;
 }
 
+ul.nav-links {
+    z-index: 200;
+}
+
 .nav-links .nav-link {
   cursor: pointer;
   font-family: var(--primary-font);
