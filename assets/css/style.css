@@ -457,6 +457,25 @@ ul.nav-links {
 
 /*Media Queries */
 
+/* For tablet sized screens to stop text from wrapping */
+@media (max-width: 768px) {
+  #home-quiz-box-area {
+       padding-left: 1rem;
+       padding-right: 1rem;
+       max-width: 100%;
+  }
+
+  #home-quiz-box-area h1 {
+       font-size: 1.50rem;
+  }
+
+  #home-quiz-box-area h2 {
+      font-size: 1.30rem;
+      white-space: nowrap;
+  }
+}
+
+/* For mobile or smaller sized screens to stop text from wrapping */
 @media (max-width: 576px) {
     #home-quiz-box-area {
          padding-left: 1rem;
@@ -476,27 +495,40 @@ ul.nav-links {
 
 /* Make NAV Bar Responsive on mid to small screens */    
 @media (max-width: 768px) {
+
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
   .menu-toggle {
     display: block;
+    margin-left: auto; 
+    order: 1;
   }
 
   ul.nav-links {
     background-color: #B12631;
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
+    position: static;
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    max-height: 0;
+    overflow: hidden;  
+    transition: max-height 200ms ease;
+    text-align: right;
+    order: 2;
   }
 
   ul.nav-links.show {
-    display: flex;
+    max-height: 150px; 
   }
 
   ul.nav-links .nav-link {
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.25rem; 
+    display: block; 
   }
 }
 
