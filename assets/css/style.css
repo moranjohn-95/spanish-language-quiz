@@ -399,6 +399,7 @@ display: flex;
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin-left: auto;
 }
 
 ul.nav-links {
