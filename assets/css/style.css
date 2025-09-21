@@ -419,13 +419,14 @@ ul.nav-links {
 
 
 .menu-toggle {
+  all: unset;
   cursor: pointer;
   display: none;  
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 25px;
-  z-index: 200;  
+  z-index: 300;  
   background: none;
   border: none;
   padding: 0;
