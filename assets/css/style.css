@@ -510,6 +510,16 @@ ul.nav-links {
 @media (hover: none) and (pointer: coarse) {
     button:hover,
     button:active {
-        transform: none !important;
+     transform: none !important;
+      background-color: #1A252F !important;
     }
+
+  .answer-button:hover,
+  .answer-button:active,
+  .answer-button:focus,
+  .answer-button:focus-visible {
+    background-color: #1A252F !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
