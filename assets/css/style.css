@@ -498,7 +498,7 @@ ul.nav-links {
 }
 
 /* Make NAV Bar Responsive on mid to small screens */    
-@media (max-width: 768px) {
+@media (max-width: 780px) {
 
 .nav-container {
     display: flex;
