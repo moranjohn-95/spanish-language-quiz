@@ -334,14 +334,14 @@ font-weight: bold;
 
 /* Fix quiz buttons from remaining selected on mobile */
 
-.answer-button:focus,
-.answer-button:active,
-.answer-button:focus-visible {
-    outline: none !important;
-    box-shadow: none !important;
-    transform: none !important;
-    background-color: #1A252F !important;
-    touch-action: manipulation;
+.answer-button:not(.correct):not(.wrong):focus,
+.answer-button:not(.correct):not(.wrong):active,
+.answer-button:not(.correct):not(.wrong):focus-visible { 
+  background-color: #1A252F !important;                 
+  outline: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  touch-action: manipulation;
 }
 
 button, 
@@ -564,12 +564,12 @@ ul.nav-links {
       background-color: #1A252F !important;
     }
 
-  .answer-button:hover,
-  .answer-button:active,
-  .answer-button:focus,
-  .answer-button:focus-visible {
-    background-color: #1A252F !important;
-    outline: none !important;
-    box-shadow: none !important;
+.answer-button:not(.correct):not(.wrong):hover,        
+.answer-button:not(.correct):not(.wrong):active,      
+.answer-button:not(.correct):not(.wrong):focus,          
+.answer-button:not(.correct):not(.wrong):focus-visible { 
+  background-color: #1A252F !important;
+  outline: none !important;
+  box-shadow: none !important;
   }
 }
