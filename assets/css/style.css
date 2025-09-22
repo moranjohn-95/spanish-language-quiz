@@ -352,6 +352,19 @@ button,
   user-select: none;
 }
 
+/*Added for color correction on right or wrong answers*/
+.answer-button { 
+  transition: background-color 200ms ease;          
+}
+.answer-button.correct { 
+  background-color: #28a745 !important;              
+  color: #ECF0F1 !important;                          
+}
+.answer-button.wrong { 
+  background-color: #dc3545 !important;              
+  color: #ECF0F1 !important;                          
+}
+
 /* Styling for Footer */
 #footer-area {
   background-color: #B12631;

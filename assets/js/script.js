@@ -518,6 +518,7 @@ function showQuestion(currentQ) {
     btn.textContent = answer.text;
     btn.classList.add("answer-button");
     btn.style.touchAction = "manipulation";
+    btn.dataset.correct = String(!!answer.correct); 
 
     const activate = (e) => {
       if (e && e.preventDefault) e.preventDefault();
@@ -531,11 +532,21 @@ function showQuestion(currentQ) {
       Array.from(answersContainer.children).forEach(b => {
         b.disabled = true;
         if (b instanceof HTMLElement) b.blur();
-      });
+        });
 
       if (answer.correct) score++;
       scoreDisplay.innerHTML = `Correct: <span class="highlight">${score}</span>/10`;
       questionCount++;
+
+      // Added to show correct or wrong answer highlighted
+       Array.from(answersContainer.children).forEach(b => {
+        if (b.dataset.correct === "true") {
+          b.classList.add("correct"); 
+        }
+        });
+      if (!answer.correct) {
+        btn.classList.add("wrong"); 
+      }
 
       const goNext = () => {
         if (questionCount >= 10) endQuiz();
@@ -543,14 +554,15 @@ function showQuestion(currentQ) {
       };
 
       // Add pause to ensure active state is cleared 
+      const delayMs = 800;
       if (isTouch) {
         answersContainer.style.pointerEvents = "none";
         setTimeout(() => {
           answersContainer.style.pointerEvents = "";
           goNext();
-        }, 60);
+        }, delayMs);
       } else {
-        Promise.resolve().then(goNext);
+        setTimeout(goNext,  delayMs)
       }
     };
 
