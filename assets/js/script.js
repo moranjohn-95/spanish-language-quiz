@@ -716,5 +716,5 @@ const fireworks = new Fireworks.default(container, {
 });
 fireworks.start();
 
-setTimeout(() => fireworks.stop(), 2000);
+setTimeout(() => fireworks.stop(), 1200);
 }

@@ -3,6 +3,7 @@
 :root {
   --primary-font: 'Noto Sans';
   --secondary-font: 'Merriweather';
+  --footer-clearance: 4rem;
 }
 
 html, body {
@@ -15,6 +16,7 @@ html, body {
 
 main {
     flex: 1;
+    padding-bottom: var(--footer-clearance);
 }
 
 h1, h2 {
