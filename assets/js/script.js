@@ -555,15 +555,13 @@ function showQuestion(currentQ) {
 
       // Add pause to ensure active state is cleared 
       const delayMs = 800;
-      if (isTouch) {
-        answersContainer.style.pointerEvents = "none";
+      answersContainer.style.pointerEvents = "none";
+      Promise.resolve().then(() => {
         setTimeout(() => {
           answersContainer.style.pointerEvents = "";
           goNext();
         }, delayMs);
-      } else {
-        setTimeout(goNext,  delayMs)
-      }
+      });
     };
 
     let used = false;
