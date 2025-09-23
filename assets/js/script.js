@@ -1,3 +1,4 @@
+/* jshint esversion: 6, browser: true, devel: true */
 // DOM Elements 
 
 // Main sections/boxes
@@ -16,8 +17,8 @@ const backToQuizButton = document.getElementById("back-to-quiz");
 const startQuizButton = document.getElementById("start-quiz");
 
 // Username Input 
-const submitUsernameButton = document.getElementById("submit-username")
-const usernameInput = document.getElementById("username-input")
+const submitUsernameButton = document.getElementById("submit-username");
+const usernameInput = document.getElementById("username-input");
 
 // Timer
 const countdownTimer = document.getElementById("countdown-timer");
@@ -519,7 +520,7 @@ function showQuestion(currentQ) {
       if (typeof questionCounter !== "undefined" && questionCounter) {
       questionCounter.textContent = `Question ${questionCount + 1}`;
       }
-      
+
   currentQ.answers.forEach(answer => {
     const btn = document.createElement("button");
     btn.type = "button";
