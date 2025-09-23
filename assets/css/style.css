@@ -218,6 +218,32 @@ button:active {
     transform:scale(1);
 }
 
+/* buttons for 404 Page */
+
+a.button {
+ background-color: #1A252F;
+ color: #ECF0F1;
+ font-family: var(--primary-font);
+ font-weight: bold;
+ padding: 1rem;
+ border: none;
+ border-radius: 20px;
+ width: 200px;
+ cursor: pointer;
+ transition: background-color 0.5s, transform 0.2s;
+}
+
+a.button:hover {
+ background-color: #273846;
+}
+
+a.button:focus,
+a.button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    transform:scale(1);
+}
+
 #answers .answer-button {
 display: block;
 margin: 10px auto; 
