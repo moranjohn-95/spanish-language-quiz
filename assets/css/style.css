@@ -231,6 +231,8 @@ a.button {
  width: 200px;
  cursor: pointer;
  transition: background-color 0.5s, transform 0.2s;
+ text-decoration: none; 
+ display: inline-block; 
 }
 
 a.button:hover {
@@ -244,6 +246,7 @@ a.button:active {
     transform:scale(1);
 }
 
+/* Styling for answer buttons in quiz*/
 #answers .answer-button {
 display: block;
 margin: 10px auto; 
