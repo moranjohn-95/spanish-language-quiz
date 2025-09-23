@@ -27,6 +27,7 @@ const timerDisplay = document.getElementById("timer");
 const scoreDisplay = document.getElementById("scoring");
 const questionText = document.getElementById("question-text");
 const answersContainer = document.getElementById("answers");
+const questionCounter = document.getElementById("question-counter");
 
 // End of Quiz Buttons
 const seeLeaderboardButton = document.getElementById("see-leaderboard");
@@ -474,6 +475,9 @@ if (selectedCategory === "mix") {
 startTimer();
 loadQuestion();
 
+if (typeof questionCounter !== "undefined" && questionCounter) {
+questionCounter.textContent = "Question 1";
+ }
 }
 
 function startTimer() {
@@ -511,7 +515,11 @@ function showQuestion(currentQ) {
 
       questionText.textContent = currentQ.question;
       answersContainer.innerHTML = "";
-
+      
+      if (typeof questionCounter !== "undefined" && questionCounter) {
+      questionCounter.textContent = `Question ${questionCount + 1}`;
+      }
+      
   currentQ.answers.forEach(answer => {
     const btn = document.createElement("button");
     btn.type = "button";
