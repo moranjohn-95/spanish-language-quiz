@@ -368,7 +368,7 @@ const questions = {
 
     ]
 
-}
+};
 
 //Hide all screens to start except for home screen.
 function initializeScreens() {
@@ -512,7 +512,14 @@ function showQuestion(currentQ) {
   if (document.activeElement && document.activeElement instanceof HTMLElement) {
     document.activeElement.blur();
   }
-  try { window.getSelection && window.getSelection().removeAllRanges(); } catch (_) {}
+    try {
+    if (window.getSelection) {
+        const sel = window.getSelection();               
+      if (sel && sel.removeAllRanges) {               
+        sel.removeAllRanges();                         
+       }                                                
+      }                                                  
+     } catch (e) { /* noop */ } 
 
       questionText.textContent = currentQ.question;
       answersContainer.innerHTML = "";
@@ -714,7 +721,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
 
 //Fireworks effect taken from firework-js / https://github.com/crashmax-dev/fireworks-js
 function startFireworks() {
-const container =document.getElementById('fireworks-celebration')
+const container =document.getElementById('fireworks-celebration');
 const fireworks = new Fireworks.default(container, {
   autoresize: true,
   opacity: 0.5,
