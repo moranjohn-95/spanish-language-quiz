@@ -449,7 +449,7 @@ const interval = setInterval(() => {
     }, 1000);
 }
 
-//Start Qui and 60s Timer
+//Start Quiz and 60s Timer
 function startQuiz() {
     score =0;
     questionCount = 0;
@@ -598,7 +598,7 @@ function showQuestion(currentQ) {
     });
 }
 
-//To end quiz when time runs out or all questions are answered + save results
+// To end quiz when time runs out or all questions are answered + save results
 
 function endQuiz() {
     clearInterval(quizTimer);
@@ -610,7 +610,7 @@ function endQuiz() {
 
     saveScore(username, score, 60 - timeLeft);
     
-    //Added to Start firewoks when score is announced
+    // Added to Start firewoks when score is announced
     startFireworks();
 }
 
