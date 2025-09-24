@@ -257,7 +257,7 @@ const questions = {
             answers: [
                 {text: "To Sing", correct: false},
                 {text: "To Make", correct: false},
-                {text: "To Breath", correct: true},
+                {text: "To Breathe", correct: true},
                 {text: "To Rub", correct: false},
 
             ]
