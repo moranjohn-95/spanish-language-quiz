@@ -119,7 +119,7 @@ const questions = {
             ]
         },
         {
-            question: "el Plato",
+            question: "El Plato",
             answers: [
                 { text: "The Plate", correct: true },
                 { text: "The Patio", correct: false },
@@ -245,7 +245,7 @@ const questions = {
         {
             question: "Omitir", 
             answers: [
-                {text: "To Skip", correct: true},
+                {text: "To Omit", correct: true},
                 {text: "To Swim", correct: false},
                 {text: "To Own", correct: false},
                 {text: "To Claim", correct: false},
@@ -253,7 +253,7 @@ const questions = {
             ]
         },
         {
-            question: "Espirar", 
+            question: "Respirar", 
             answers: [
                 {text: "To Sing", correct: false},
                 {text: "To Make", correct: false},
